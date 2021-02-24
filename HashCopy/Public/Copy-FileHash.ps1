@@ -97,7 +97,7 @@ function Copy-FileHash {
                 Write-Warning "$Destination did not exist and has been created as a folder path."
             }
 
-            $Destination = Join-Path ((Resolve-Path -Path $Destination).Path) -ChildPath '/'
+            $Destination = (Resolve-Path -Path $Destination).Path
         }
         Catch {
             Throw $_
